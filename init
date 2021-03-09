@@ -2,3 +2,10 @@ source ~/.bash/colors
 source ~/.bash/settings
 source ~/.bash/alias
 source ~/.bash/functions
+source "$HOME/.cargo/env"
+alias dc='docker-compose'
+
+# check if bat is installed - replacement for cat
+if command -v bat &> /dev/null; then
+   alias cat='bat'
+fi
