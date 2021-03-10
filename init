@@ -9,3 +9,11 @@ alias dc='docker-compose'
 if command -v bat &> /dev/null; then
    alias cat='bat'
 fi
+
+# alias for creating python virtualenv using current directory name
+# prepended with '.'
+if ! command -v virtualenv &>/dev/null; then
+    sudo apt install virtualenv python3 python3-dev
+fi
+
+alias pipenv='virtualenv --python=python .${PWD##*/}'
