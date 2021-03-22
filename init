@@ -3,6 +3,7 @@ source ~/.bash/settings
 source ~/.bash/alias
 source ~/.bash/functions
 source "$HOME/.cargo/env"
+source "$HOME/.bash_profile"
 alias dc='docker-compose'
 
 # check if bat is installed - replacement for cat
