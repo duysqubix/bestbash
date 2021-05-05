@@ -3,7 +3,6 @@ source ~/.bash/settings
 source ~/.bash/alias
 source ~/.bash/functions
 source "$HOME/.cargo/env"
-source "$HOME/.bash_profile"
 alias dc='docker-compose'
 
 # check if bat is installed - replacement for cat
@@ -17,4 +16,13 @@ if ! command -v virtualenv &>/dev/null; then
     sudo apt install virtualenv python3 python3-dev
 fi
 
-alias pipenv='virtualenv --python=python .${PWD##*/}'
+# if tmux is installed start new session via tmux
+if command -v tmux &> /dev/null; then
+    tmux new
+fi
+
+alias pipenv='virtualenv --python=python3 .venv'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+#export SDKMAN_DIR="/home/duys/.sdkman"
+#[[ -s "/home/duys/.sdkman/bin/sdkman-init.sh" ]] && source "/home/duys/.sdkman/bin/sdkman-init.sh"
